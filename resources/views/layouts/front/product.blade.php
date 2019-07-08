@@ -30,10 +30,12 @@
             @if(isset($product->cover))
                 <img id="main-image" class="product-cover img-responsive"
                      src="{{ asset("storage/$product->cover") }}?w=400"
-                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200">
+                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200"
+                >
             @else
                 <img id="main-image" class="product-cover" src="https://placehold.it/300x300"
-                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200" alt="{{ $product->name }}">
+                     data-zoom="{{ asset("storage/$product->cover") }}?w=1200"
+                     alt="{{ $product->name }}">
             @endif
         </figure>
     </div>
@@ -77,8 +79,7 @@
                                    value="{{ old('quantity') }}" />
                             <input type="hidden" name="product" value="{{ $product->id }}" />
                         </div>
-                        <button type="submit" class="btn btn-warning"><i class="fa fa-cart-plus"></i> Add to cart
-                        </button>
+                        <button type="submit" class="btn btn-warning"><i class="fa fa-cart-plus"></i> Add to cart</button>
                     </form>
                 </div>
             </div>
@@ -87,14 +88,14 @@
 </div>
 @section('js')
     <script type="text/javascript">
-        $(document).ready(function () {
-            var productPane = document.querySelector('.product-cover');
-            var paneContainer = document.querySelector('.product-cover-wrap');
-
-            new Drift(productPane, {
-                paneContainer: paneContainer,
-                inlinePane: false
-            });
-        });
+        // $(document).ready(function () {
+        //     var productPane = document.querySelector('.product-cover');
+        //     var paneContainer = document.querySelector('.product-cover-wrap');
+        //
+        //     new Drift(productPane, {
+        //         paneContainer: paneContainer,
+        //         inlinePane: false
+        //     });
+        // });
     </script>
 @endsection

@@ -525,7 +525,7 @@ textarea, select {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 60px;
+    height: 100px;
     background-color: #f5f5f5;
 }
 
@@ -537,7 +537,6 @@ textarea, select {
 .footer-menu, .footer-social {
     list-style: outside none none;
     padding: 0;
-    margin-bottom: 15px;
 }
 .footer-menu li {
     display: inline-block;

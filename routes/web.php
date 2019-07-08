@@ -80,6 +80,8 @@ Route::get('chats', 'ChatsController@index');
 Route::get('chat-messages', 'ChatsController@fetchMessages');
 Route::post('chat-messages', 'ChatsController@sendMessage');
 
+Route::get('create-event', 'EventsController@createEvent')->name('create-event');
+
 Route::namespace('Front')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::group(['middleware' => ['auth', 'web']], function () {

@@ -8,7 +8,7 @@
 
         @foreach($data as $d)
 {{--            <a href="{{ route('') }}">{{ $d->name }}</a>--}}
-            <p>{{ $d->name }}</p>
+            <a href="{{ route('add-logistics', ['id' => $d->id) }}"> {{ $d->name }}</a><br>
         @endforeach
     </div>
 @endsection

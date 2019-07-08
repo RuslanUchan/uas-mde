@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\KeteranganEvent;
+use App\Logistic;
 
 class EventsController extends Controller
 {
@@ -26,7 +27,22 @@ class EventsController extends Controller
         $event->save();
 
         return response()->json([
-            'message' => 'Success'
+            'message' => 'Events added successfully',
+            'id' => $event->id
         ]);
+    }
+
+    public function addLogistics(Request $request, $category, $id)
+    {
+        $event = new KeteranganEvent();
+
+        $event->$category = $id;
+        $event->save();
+
+        $message = 'Logistics added successfully';
+        return redirect()->route('create-event')->with(compact([
+            'message',
+            'category'
+        ]));
     }
 }

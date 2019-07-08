@@ -86,6 +86,7 @@ Route::get('create-event', 'EventsController@createEvent')->name('create-event')
 Route::get('logistics/{category}', 'LogisticsController@showList')->name('logistics-category');
 
 Route::post('api/create-event/store', 'EventsController@store');
+Route::get('create-event/add-logistics/{category}/{id}', 'EventsController@addLogistics')->name('add-logistics');
 
 /**
  * Another Default Routes

@@ -31,10 +31,5 @@
         </div>
     @endif
     <hr />
-    <div id="app">
-        <h1>TEST</h1>
-    </div>
     @include('mailchimp::mailchimp')
-
-    <script src="{{ asset('js/app.js') }}"></script>
 @endsection

@@ -75,6 +75,11 @@ Route::namespace('Auth')->group(function () {
     Route::get('logout', 'LoginController@logout');
 });
 
+// my routes
+Route::get('chats', 'ChatsController@index');
+Route::get('chat-messages', 'ChatsController@fetchMessages');
+Route::post('chat-messages', 'ChatsController@sendMessage');
+
 Route::namespace('Front')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::group(['middleware' => ['auth', 'web']], function () {

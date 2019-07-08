@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Cashier\Billable;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Message;
 
 class Customer extends Authenticatable
 {
@@ -74,5 +75,10 @@ class Customer extends Authenticatable
     public function searchCustomer($term)
     {
         return self::search($term);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 }

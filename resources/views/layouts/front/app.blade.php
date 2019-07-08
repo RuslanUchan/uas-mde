@@ -15,11 +15,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
-    <title>Laracom - Laravel FREE E-Commerce Software</title>
+{{--    <title>Laracom - Laravel FREE E-Commerce Software</title>--}}
     <meta name="description" content="Modern open-source e-commerce framework for free">
     <meta name="tags" content="modern, opensource, open-source, e-commerce, framework, free, laravel, php, php7, symfony, shop, shopping, responsive, fast, software, blade, cart, test driven, adminlte, storefront">
     <meta name="author" content="Jeff Simons Decena">
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +58,7 @@
         <a href="https://www.enable-javascript.com/" target="_blank">Read more</a>
     </p>
 </noscript>
-<section>
+<section id="app">
     <div class="hidden-xs">
         <div class="container">
             <div class="clearfix"></div>
@@ -70,12 +71,12 @@
                         <li><a href="{{ route('login') }}"> <i class="fa fa-lock"></i> Login</a></li>
                         <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Register</a></li>
                     @endif
-                    <li id="cart" class="menubar-cart">
-                        <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            <span class="cart-number">{{ $cartCount }}</span>
-                        </a>
-                    </li>
+{{--                    <li id="cart" class="menubar-cart">--}}
+{{--                        <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">--}}
+{{--                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>--}}
+{{--                            <span class="cart-number">{{ $cartCount }}</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
         </div>

@@ -75,7 +75,9 @@ Route::namespace('Auth')->group(function () {
     Route::get('logout', 'LoginController@logout');
 });
 
-// my routes
+/**
+ * My Routes
+ */
 Route::get('chats', 'ChatsController@index');
 Route::get('chat-messages', 'ChatsController@fetchMessages');
 Route::post('chat-messages', 'ChatsController@sendMessage');
@@ -83,6 +85,11 @@ Route::post('chat-messages', 'ChatsController@sendMessage');
 Route::get('create-event', 'EventsController@createEvent')->name('create-event');
 Route::get('logistics/{category}', 'LogisticsController@showList')->name('logistics-category');
 
+Route::post('api/create-event/store', 'EventsController@store');
+
+/**
+ * Another Default Routes
+ */
 Route::namespace('Front')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::group(['middleware' => ['auth', 'web']], function () {

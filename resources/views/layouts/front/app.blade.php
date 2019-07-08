@@ -65,13 +65,10 @@
     </p>
 </noscript>
 <section>
-    <div class="hidden-xs">
         <div class="container">
-            <h2><a href="{{ route('home') }}"
-                   style="color: #000; font-family: Muli, sans-serif">{{ config('app.name') }}</a></h2>
-            <div class="clearfix"></div>
-            <div class="pull-right">
-                <ul class="nav navbar-nav navbar-right">
+                <h2 style="display:inline-block; margin-top: 20px;"><a href="{{ route('home') }}"
+                    style="color: #000; font-family: Muli, sans-serif">{{ config('app.name') }}</a></h2>
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 20px;">
                     @if(auth()->check())
                         <li><a href="{{ route('accounts', ['tab' => 'profile']) }}"><i class="fa fa-home"></i> My
                                 Account</a></li>
@@ -87,10 +84,9 @@
                             <span class="cart-number">{{ $cartCount }}</span>
                         </a>
                     </li>
-                    <li>
+                    <li style="margin-left: 10px">
                         <!-- search form -->
-                        <form action="{{route('search.product')}}" method="GET" class="form-inline"
-                              style="margin: 15px 0 0;">
+                        <form action="{{route('search.product')}}" method="GET" class="form-inline">
                             <div class="input-group">
                                 <input type="text" name="q" class="form-control" placeholder="Search..." value="{!! request()->input('q') !!}">
                                 <span class="input-group-btn">
@@ -101,9 +97,9 @@
                         <!-- /.search form -->
                     </li>
                 </ul>
-            </div>
         </div>
-    </div>
+     
+   
     {{--    <header id="header-section">--}}
     {{--        <nav class="navbar navbar-default">--}}
     {{--            <div class="container">--}}

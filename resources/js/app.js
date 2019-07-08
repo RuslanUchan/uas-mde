@@ -25,7 +25,7 @@ Vue.use(VueChatScroll);
 
 // Vue.component('chat-form', require('./components/ChatForm.vue').default);
 // Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
-Vue.component('chats', require('./components/Chats.vue').default);
+// Vue.component('chats', require('./components/Chats.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,7 +33,11 @@ Vue.component('chats', require('./components/Chats.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+const Chats = require('./components/Chats.vue').default;
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        'chats': Chats
+    }
 });

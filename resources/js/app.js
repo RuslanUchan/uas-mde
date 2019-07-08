@@ -9,6 +9,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VueChatScroll from 'vue-chat-scroll';
+Vue.use(VueChatScroll);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -17,8 +20,12 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-const files = require.context('./', true, /\.vue$/i);
-files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)));
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)));
+
+// Vue.component('chat-form', require('./components/ChatForm.vue').default);
+// Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
+Vue.component('chats', require('./components/Chats.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,63 +34,6 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  */
 
 
-// const app = new Vue({
-//     el: '#app',
-//
-//     data: {
-//         messages: [],
-//         users: [],
-//     },
-//
-//     created() {
-//         this.fetchMessages();
-//
-//         Echo.join('chat')
-//             .here(users => {
-//                 this.users = users;
-//             })
-//             .joining(user => {
-//                 this.users.push(user);
-//             })
-//             .leaving(user => {
-//                 this.users = this.users.filter(u => u.id !== user.id);
-//             })
-//             .listenForWhisper('typing', ({id, name}) => {
-//                 this.users.forEach((user, index) => {
-//                     if (user.id === id) {
-//                         user.typing = true;
-//                         this.$set(this.users, index, user);
-//                     }
-//                 });
-//             })
-//             .listen('MessageSent', (event) => {
-//                 this.messages.push({
-//                     message: event.message.message,
-//                     user: event.user
-//                 });
-//
-//                 this.users.forEach((user, index) => {
-//                     if (user.id === event.user.id) {
-//                         user.typing = false;
-//                         this.$set(this.users, index, user);
-//                     }
-//                 });
-//             });
-//     },
-//
-//     methods: {
-//         fetchMessages() {
-//             axios.get('/messages').then(response => {
-//                 this.messages = response.data;
-//             });
-//         },
-//
-//         addMessage(message) {
-//             this.messages.push(message);
-//
-//             axios.post('/messages', message).then(response => {
-//                 console.log(response.data);
-//             });
-//         }
-//     }
-// });
+const app = new Vue({
+    el: '#app'
+});

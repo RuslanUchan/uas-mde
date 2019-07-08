@@ -58,7 +58,7 @@
         <a href="https://www.enable-javascript.com/" target="_blank">Read more</a>
     </p>
 </noscript>
-<section>
+<section id="app">
     <div class="hidden-xs">
         <div class="container">
             <div class="clearfix"></div>

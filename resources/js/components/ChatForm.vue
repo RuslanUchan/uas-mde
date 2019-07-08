@@ -1,5 +1,7 @@
 <template>
-    <h1>Chat Form</h1>
+    <div>
+        <h1>Chat Form</h1>
+    </div>
 <!--    <div class="input-group">-->
 <!--        <input-->
 <!--                id="btn-input"-->
@@ -19,28 +21,34 @@
 
 <script>
     export default {
-        props: ['user'],
-
-        data() {
-            return {
-                newMessage: ''
-            }
-        },
-
-        methods: {
-            sendTypingEvent() {
-                Echo.join('chat')
-                    .whisper('typing', this.user);
-            },
-
-            sendMessage() {
-                this.$emit('messagesent', {
-                    user: this.user,
-                    message: this.newMessage
-                });
-
-                this.newMessage = ''
-            }
+        name: "ChatForm",
+        mounted() {
+            console.log("Component Mounted");
         }
     }
+    // export default {
+    //     props: ['user'],
+    //
+    //     data() {
+    //         return {
+    //             newMessage: ''
+    //         }
+    //     },
+    //
+    //     methods: {
+    //         sendTypingEvent() {
+    //             Echo.join('chat')
+    //                 .whisper('typing', this.user);
+    //         },
+    //
+    //         sendMessage() {
+    //             this.$emit('messagesent', {
+    //                 user: this.user,
+    //                 message: this.newMessage
+    //             });
+    //
+    //             this.newMessage = ''
+    //         }
+    //     }
+    // }
 </script>

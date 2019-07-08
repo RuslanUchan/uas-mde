@@ -1,8 +1,11 @@
 @extends('layouts.front.app')
 
 @section('content')
-    <chats></chats>
-@endsection
-@section('js')
-    <script src="{{ asset('js/app.js') }}"></script>
+    <div id="app">
+        <h1>Test</h1>
+        <chat-messages></chat-messages>
+        <chat-form></chat-form>
+{{--        <chat-messages></chat-messages>--}}
+{{--        <chat-form></chat-form>--}}
+    </div>
 @endsection

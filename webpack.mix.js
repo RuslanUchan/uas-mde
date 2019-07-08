@@ -54,8 +54,8 @@ mix
         ],
         'public/js/front.min.js'
     )
-    .js('resources/js/app.js','public/js/app.js')
-    .sass('resources/sass/app.scss', 'public/css/app.css')
+    .js('resources/js/app.js','public/js')
+    .sass('resources/sass/app.scss', 'public/css')
     .copyDirectory('node_modules/datatables/media/images', 'public/images')
     .copyDirectory('node_modules/font-awesome/fonts', 'public/fonts')
     .copyDirectory('resources/assets/admin-lte/img', 'public/img')

@@ -1,5 +1,7 @@
 <template>
-    <h1>Chat Messages</h1>
+    <div>
+        <h1>Chat Messages</h1>
+    </div>
 <!--    <ul class="chat">-->
 <!--        <li class="left clearfix" v-for="message in messages">-->
 <!--            <div class="chat-body clearfix">-->
@@ -18,6 +20,10 @@
 
 <script>
     export default {
-        props: ['messages']
+        name: "ChatMessages",
+        // props: ['messages']
+        mounted() {
+            console.log("Component Mounted");
+        }
     };
 </script>

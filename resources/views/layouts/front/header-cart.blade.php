@@ -9,12 +9,12 @@
             <li class="visible-xs"><a href="{{ route('login') }}"> <i class="fa fa-lock"></i> Login</a></li>
             <li class="visible-xs"><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Register</a></li>
         @endif
-        <li id="cart" class="menubar-cart visible-xs">
-            <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="cart-number">{{ $cartCount }}</span>
-            </a>
-        </li>
+{{--        <li id="cart" class="menubar-cart visible-xs">--}}
+{{--            <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">--}}
+{{--                <i class="fa fa-shopping-cart" aria-hidden="true"></i>--}}
+{{--                <span class="cart-number">{{ $cartCount }}</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <li>
             <!-- search form -->
             <form action="{{route('search.product')}}" method="GET" class="form-inline" style="margin: 15px 0 0;">

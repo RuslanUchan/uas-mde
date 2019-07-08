@@ -81,7 +81,7 @@ Route::get('chat-messages', 'ChatsController@fetchMessages');
 Route::post('chat-messages', 'ChatsController@sendMessage');
 
 Route::get('create-event', 'EventsController@createEvent')->name('create-event');
-Route::get('product/tenda', 'EventsController@createEvent')->name('produk-tenda');
+Route::get('logistics/{category}', 'LogisticsController@showList')->name('logistics-category');
 
 Route::namespace('Front')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
